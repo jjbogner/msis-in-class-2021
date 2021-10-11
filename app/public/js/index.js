@@ -27,7 +27,7 @@ const SomeApp = {
           this.fetchOfferData(this.selectedStudent);
       },
       fetchStudentData() {
-          fetch('/api/student/')
+          fetch('api/student/index.php')
           .then( response => response.json() )
           .then( (responseJson) => {
               console.log(responseJson);
@@ -68,7 +68,7 @@ const SomeApp = {
           .then( json => {
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
-            this.offers.push(json[0]);
+            this.offers = responseJson;
 
             this.offerForm = {};
           });
