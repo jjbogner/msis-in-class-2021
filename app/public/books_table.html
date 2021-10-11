@@ -48,10 +48,13 @@
     </thead>
     <tbody>
         <tr v-for="b in books1">
-          <td>{{ book.companyName }}</td>
-          <td>{{ prettyDollar(offer.salary) }}</td>
-          <td>{{ prettyDollar(offer.bonus) }}</td>
-          <td>{{ offer.offerDate }}</td>
+          <td>{{ b.book_id }}</td>
+          <td>{{ b.authors }}</td>
+          <td>{{ b.year_published }}</td>
+          <td>{{ b.publisher }}</td>
+          <td>{{ b.page_count }}</td>
+          <td>{{ prettyDollar(b.msrp) }}</td>
+          <td>{{ b.picture }}</td>
       </tr>
     </tbody>
   </table>
