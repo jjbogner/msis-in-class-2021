@@ -30,6 +30,9 @@
     </div>
   </nav>
 <body>
+
+<div  class="someApp" v-if="selectedStudent">
+
 <table id="taskTable" class="table">
     <thead>
       <tr>
@@ -44,38 +47,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row" id="red_table_head">1</th>
-        <td>Harry Potter and the Philosopher's Stone</td>
-        <td>J.K. Rowling</td>
-        <td>1997</td>
-        <td>Bloomsbury</td>
-        <td>223</td>
-        <td>$6.98</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row" id="red_table_head">2</th>
-        <td>The Book Thief</td>
-        <td>Markus Zusak</td>
-        <td>2005</td>
-        <td>Picador</td>
-        <td>584</td>
-        <td>$14.99</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row" id="red_table_head">3</th>
-        <td>Fahrenheit 451</td>
-        <td>Mugnaini</td>
-        <td>1953</td>
-        <td>Ballentine Books</td>
-        <td>256</td>
-        <td>$16.99</td>
-        <td></td>
+        <tr v-for="b in books">
+          <td>{{ book.companyName }}</td>
+          <td>{{ prettyDollar(offer.salary) }}</td>
+          <td>{{ prettyDollar(offer.bonus) }}</td>
+          <td>{{ offer.offerDate }}</td>
       </tr>
     </tbody>
   </table>
+
+  </div>
   <form>
     <div class="mb-3">
       <label for="exampleInput1" class="form-label">Title</label>
