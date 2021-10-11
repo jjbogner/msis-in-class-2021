@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+  <title>Table of Books</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="css/custom.css" rel="stylesheet" type="text/css">
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navigation</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="user_information.html">User Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="books_table.html">Books List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<body>
+<table id="taskTable" class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author(s)</th>
+        <th scope="col">Year Published</th>
+        <th scope="col">Publisher</th>
+        <th scope="col">Page Count</th>
+        <th scope="col">MSRP</th>
+        <th scope="col">Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" id="red_table_head">1</th>
+        <td>Harry Potter and the Philosopher's Stone</td>
+        <td>J.K. Rowling</td>
+        <td>1997</td>
+        <td>Bloomsbury</td>
+        <td>223</td>
+        <td>$6.98</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row" id="red_table_head">2</th>
+        <td>The Book Thief</td>
+        <td>Markus Zusak</td>
+        <td>2005</td>
+        <td>Picador</td>
+        <td>584</td>
+        <td>$14.99</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row" id="red_table_head">3</th>
+        <td>Fahrenheit 451</td>
+        <td>Mugnaini</td>
+        <td>1953</td>
+        <td>Ballentine Books</td>
+        <td>256</td>
+        <td>$16.99</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row" id="red_table_head">4</th>
+        <td>The Giver</td>
+        <td>Lois Lowry</td>
+        <td>1993</td>
+        <td>Houghton Mifflin</td>
+        <td>193</td>
+        <td>$15.99</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row" id="red_table_head">5</th>
+        <td>The Glass Castle</td>
+        <td>Jeanette Walls</td>
+        <td>2005</td>
+        <td>Scribner</td>
+        <td>289</td>
+        <td>$7.79</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row" id="red_table_head">6</th>
+        <td>Peter and the Starcatchers</td>
+        <td>Dave Berry</td>
+        <td>2004</td>
+        <td>Hyperion Books</td>
+        <td>452</td>
+        <td>$9.29</td>
+        <td><a href="images/Peter_Starcatchers.jpg" ><img src="images/Peter_Starcatchers_small.jpg"><a></a></td>
+      </tr>
+    </tbody>
+  </table>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput1" class="form-label">Title</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput2" class="form-label">Author(s)</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput3" class="form-label">Year Published</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput4" class="form-label">Publisher</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput5" class="form-label">Pages</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput6" class="form-label">MSRP</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <script src="js/tablesort.min.js"></script>
+
+  <script>
+    new Tablesort(document.getElementById('taskTable'));
+  </script>
+// table sort taken from http://tristen.ca/tablesort/demo/
+</body>
+</html>
