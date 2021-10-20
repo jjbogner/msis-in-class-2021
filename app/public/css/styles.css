@@ -5,11 +5,11 @@ body {}
     margin: 10px 2px;
     padding: 4px;
     border: 1px solid gray;
-    background-color: antiquewhite;
+    background-color: lightblue;
 }
 
 .selected {
-    background-color: burlywood;
+    background-color: blue;
 }
 
 .userName {
