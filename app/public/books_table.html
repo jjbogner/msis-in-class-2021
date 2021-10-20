@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <title>Table of Books</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="css/custom.css" rel="stylesheet" type="text/css">
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navigation</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="user_information.html">User Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="books_table.html">Books List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<body>
+
+<div  id="someApp">
+
+<table id="taskTable" class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author(s)</th>
+        <th scope="col">Year Published</th>
+        <th scope="col">Publisher</th>
+        <th scope="col">Page Count</th>
+        <th scope="col">MSRP</th>
+        <th scope="col">Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr v-for="b in books1">
+          <td>{{ b.book_id }}</td>
+          <td>{{ b.authors }}</td>
+          <td>{{ b.year_published }}</td>
+          <td>{{ b.publisher }}</td>
+          <td>{{ b.page_count }}</td>
+          <td>{{ prettyDollar(b.msrp) }}</td>
+          <td>{{ b.picture }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput1" class="form-label">Title</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput2" class="form-label">Author(s)</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput3" class="form-label">Year Published</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput4" class="form-label">Publisher</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput5" class="form-label">Pages</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInput6" class="form-label">MSRP</label>
+      <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <script src="js/tablesort.min.js"></script>
+
+  <script>
+    new Tablesort(document.getElementById('taskTable'));
+  </script>
+// table sort taken from http://tristen.ca/tablesort/demo/
+</body>
+</html>
