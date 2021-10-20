@@ -9,9 +9,9 @@ CREATE TABLE student (
 );
 
 INSERT INTO student (id, username, name) VALUES 
-(1, 'tomgreg', 'Tom Gregory'),
-(2, 'beth1', 'Beth Barnhart'),
-(3, 'bipin', 'Prof. Prabhakar');
+(1, 'Fiction'),
+(2, 'Non-Fiction'),
+(3, 'Novel');
 
 -- SELECT * FROM students;
 
@@ -20,17 +20,18 @@ CREATE TABLE offer (
 	id int PRIMARY KEY AUTO_INCREMENT,
     studentId int NOT NULL REFERENCES student(id) 
         ON DELETE CASCADE ON UPDATE CASCADE,
-	companyName VARCHAR(24) NOT NULL DEFAULT '',
-    salary int NOT NULL DEFAULT 0,
-    bonus int NOT NULL DEFAULT 0,
-	offerDate date NOT NULL DEFAULT(CURRENT_DATE)
+	title VARCHAR(50) NOT NULL DEFAULT '',
+    author VARCHAR(50) NOT NULL DEFAULT '',
+    year_pub VARCHAR(4) NOT NULL DEFAULT '',
+    publisher VARCHAR(50) NOT NULL DEFAULT '',
+    pg_count int(4) NOT NULL DEFAULT 0,
+    MSRP float NOT NULL DEFAULT 0
 );
 
 -- Student 1 has no offers, Student 2 has 3 offers, Student 3 has one offer
-INSERT INTO offer(id, studentId, companyName, salary, bonus, offerDate) VALUES
-  (1, 2, 'KPMG', 95000, 7000, '2021-09-30'),
-  (2, 2, 'Deloitte Digital', 94000, 12000, '2021-10-03'),
-  (3, 2, 'IU, ISGP', 54000, 0, '2021-10-05'),
-  (4, 3, 'Amazon', 122000, 11000, '2021-10-15')
+INSERT INTO offer(id, studentId, title, author, year_pub, publisher, pg_count, MSRP) VALUES
+  (1, 1, 'Harry Potter and the Philosophers Stone', 'J.K. Rowling' , '1997', 'Bloomsbury', 223, 6.98),
+  (2, 3, 'The Book Thief', 'Markus Zusak', '2005', 'Picador', 584, 14.99),
+  (3, 3, 'Fahrenheit 451', 'Mugnaini', '1953', 'Ballentine Books', 256, 16.99)
 ;
 
