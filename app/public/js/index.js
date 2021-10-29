@@ -143,3 +143,4 @@ const SomeApp = {
   }
   
   Vue.createApp(SomeApp).mount('#offerApp');
+  
