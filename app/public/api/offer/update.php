@@ -32,11 +32,12 @@ $db = DbConnection::getConnection();
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
   'UPDATE offer SET
-    companyName = ?,
-    salary = ?,
-    bonus = ?,
-    offerDate = ?,
-    status = ?
+    title = ?,
+    author = ?,
+    year_pub = ?,
+    publisher = ?,
+    pg_count = ?,
+    MSRP = ?,
   WHERE id = ?'
 );
 
