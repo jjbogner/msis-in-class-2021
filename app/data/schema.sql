@@ -8,10 +8,10 @@ CREATE TABLE student (
     name varchar(48)
 );
 
-INSERT INTO student (id, username, name) VALUES 
-(1, 'tomgreg', 'Tom Gregory'),
-(2, 'beth1', 'Beth Barnhart'),
-(3, 'bipin', 'Prof. Prabhakar');
+INSERT INTO student (id, name) VALUES 
+(1, 'Tom Gregory'),
+(2, 'Beth Barnhart'),
+(3, 'Prof. Prabhakar');
 
 -- SELECT * FROM students;
 
@@ -20,10 +20,13 @@ CREATE TABLE offer (
 	id int PRIMARY KEY AUTO_INCREMENT,
     studentId int NOT NULL REFERENCES student(id) 
         ON DELETE CASCADE ON UPDATE CASCADE,
-	companyName VARCHAR(24) NOT NULL DEFAULT '',
-    salary int NOT NULL DEFAULT 0,
-    bonus int NOT NULL DEFAULT 0,
-	offerDate date NOT NULL DEFAULT(CURRENT_DATE)
+	title VARCHAR(50) NOT NULL DEFAULT '',
+    author VARCHAR(50) NOT NULL DEFAULT '',
+    year_pub VARCHAR(4) NOT NULL DEFAULT '',
+    publisher VARCHAR(50) NOT NULL DEFAULT '',
+    pg_count int(4) NOT NULL DEFAULT 0,
+    MSRP int NOT NULL DEFAULT 0
+);
 );
 
 -- Student 1 has no offers, Student 2 has 3 offers, Student 3 has one offer
